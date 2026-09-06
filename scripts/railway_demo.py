@@ -22,11 +22,13 @@ parser.add_argument('--output',type=Path,required=True)
 parser.add_argument('--env',type=Path)
 parser.add_argument('--generate',action='store_true')
 parser.add_argument('--scene-only',action='store_true')
+parser.add_argument('--train-motion',action='store_true',help='Animate trains from the styled first frame; camera and architecture stay fixed')
 parser.add_argument('--anchors',type=Path,help='Prior nine-grid-status.json; use each finished style as identical first/last images')
 parser.add_argument('--closeup',action='store_true',help='Fill the frame with the station district; exclude diorama edges')
 parser.add_argument('--replay',action='store_true',help='Play saved outputs without generating')
 parser.add_argument('--resolution',choices=['480P','768P'],default='480P')
 args=parser.parse_args(sys.argv[sys.argv.index('--')+1:])
+if args.train_motion and not args.anchors:parser.error('--train-motion requires --anchors')
 if args.replay and args.generate:parser.error('Choose --replay or --generate')
 out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
 if args.env:
@@ -107,7 +109,9 @@ def launch_ui():
                 subprocess.run(['ffmpeg','-y','-v','error','-ss','4','-i',prior['styles'][name]['video_path'],'-frames:v','1','-q:v','2',str(anchor)],check=True)
                 data=anchor.read_bytes()
                 prompt=('Locked-off architectural render hold. The first and last images are identical and already fully finished. Preserve that exact image composition, materials, palette, brightness, sharpness and lighting for the entire duration. All buildings, train cars, rails and stairs stay absolutely stationary. No camera motion, object motion, style change, reveal, relighting, fade, dissolve, morph, construction or transition. Only microscopic natural texture shimmer, if any. The entire clip should look like the same finished render. ')
-                payload=live_preview.build_payload(data,prompt,args.resolution,end_image_bytes=data)
+                if args.train_motion:
+                    prompt=('A single locked-off architectural shot of this exact finished scene. Only the existing commuter train moves: all connected carriages travel together very slowly and smoothly along their existing rails toward the upper-left edge of the image, advancing approximately one carriage length over five seconds. Wheels roll naturally, cars remain rigid and coupled, and the train stays precisely on its current track. Preserve the train design and carriage count; do not create another train. All buildings, station roof, stairs, platforms, poles, overhead cables, trees, shadows and lighting remain completely stationary. Preserve the exact camera projection, framing, material style and color palette from the first frame. No zoom, pan, orbit, scene transition, dissolve, style transformation, architectural deformation or relighting. The finished rendering style is present throughout. Continuous gentle train movement only.')
+                payload=live_preview.build_payload(data,prompt,args.resolution,end_image_bytes=None if args.train_motion else data)
                 payload['seed']=314159+i
                 endpoint=live_preview.ENDPOINT
             else:

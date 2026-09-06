@@ -42,3 +42,5 @@ python scripts/run_demo.py --scene railway --blender "C:/Program Files/Blender F
 One batch makes **nine paid 480p requests**. Each pane shows API and request-to-visible time; full five-second clips play without trimming. Source geometry and measurements are saved in the output folder. Edit the scene and create `refresh.flag` in that folder to request another batch. H3 interprets a captured image, so mesh complexity is not equivalent to neural inference cost.
 
 To reduce transitions in an unchanged scene, add `--anchors outputs/railway-01/nine-grid-status.json` and choose a new output folder. This extracts each finished style at four seconds and uses it as **both first and last frame** for H3 Max Turbo image-to-video. It preserves the existing render rather than interpreting new geometry; displayed timings cover this second stage only.
+
+Add `--train-motion` with `--anchors` to let trains move along the rails while retaining the finished style. This uses the styled first frame only; the train is free to advance instead of returning to an identical last frame.
