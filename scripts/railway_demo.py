@@ -21,6 +21,7 @@ parser.add_argument('--output',type=Path,required=True)
 parser.add_argument('--env',type=Path)
 parser.add_argument('--generate',action='store_true')
 parser.add_argument('--scene-only',action='store_true')
+parser.add_argument('--closeup',action='store_true',help='Fill the frame with the station district; exclude diorama edges')
 parser.add_argument('--replay',action='store_true',help='Play saved outputs without generating')
 parser.add_argument('--resolution',choices=['480P','768P'],default='480P')
 args=parser.parse_args(sys.argv[sys.argv.index('--')+1:])
@@ -30,7 +31,7 @@ if args.env:
     for line in args.env.read_text(encoding='utf-8-sig').splitlines():
         if line.strip().startswith('FAL_KEY='):
             os.environ['FAL_KEY']=line.split('=',1)[1].strip().strip('"\'')
-build()
+build(closeup=args.closeup)
 scene=bpy.context.scene
 scene.name='HILLSIDE JUNCTION / NINE NEURAL WORLDS'
 scene.render.filepath=str(out/'geometry.png')
@@ -51,6 +52,7 @@ STYLES=[
  ('SCALE MODEL','Photograph of an exquisitely detailed architectural scale model. Basswood facades, ivory card roofs, frosted acrylic glazing, precisely cut miniature railway and market furniture. Deep focus so the entire city remains legible, soft museum lighting.')]
 RULES=('Image 1 is the exact camera and geometry of one coherent hillside railway district. '
        'Preserve its full-frame composition, projection, framing, scale, horizon, building count, roof outlines, window placements, station vault, train position and all stairs. '
+       'The reference is a close architectural crop when buildings intersect the frame boundaries. Continue those buildings naturally beyond the frame; do not pull back to show them. No surrounding landscape, display plinth, tabletop, model base or extra foreground. '
        'One finished image treatment is present from the very first frame through the last frame. '
        'Never reveal the gray input, build the scene, switch styles, dissolve, crossfade, wipe, morph, zoom, pan or orbit. '
        'Keep all architecture and parked trains stationary. Only barely perceptible ambient light and foliage movement. '

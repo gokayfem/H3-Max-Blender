@@ -42,7 +42,7 @@ class Parts:
         return obj
 
 
-def build():
+def build(closeup=False):
     random.seed(27)
     bpy.ops.object.select_all(action='SELECT'); bpy.ops.object.delete(use_global=False)
     ground, buildings, trim, transport, street = [Parts(n) for n in
@@ -177,6 +177,11 @@ def build():
     camera=bpy.context.object; camera.name='Locked district camera'
     camera.rotation_euler=(Vector((0,2,5))-camera.location).to_track_quat('-Z','Y').to_euler()
     camera.data.type='ORTHO';camera.data.ortho_scale=106;scene.camera=camera
+    if closeup:
+        target=Vector((0,-1,4.5))
+        camera.location=target+Vector((66,-93,63))
+        camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler()
+        camera.data.ortho_scale=36
     scene.render.engine='BLENDER_WORKBENCH'
     shading=scene.display.shading
     shading.light='STUDIO';shading.color_type='SINGLE';shading.single_color=(.57,.57,.57)
