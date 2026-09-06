@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import queue
+import subprocess
 import sys
 import threading
 import time
@@ -21,6 +22,7 @@ parser.add_argument('--output',type=Path,required=True)
 parser.add_argument('--env',type=Path)
 parser.add_argument('--generate',action='store_true')
 parser.add_argument('--scene-only',action='store_true')
+parser.add_argument('--anchors',type=Path,help='Prior nine-grid-status.json; use each finished style as identical first/last images')
 parser.add_argument('--closeup',action='store_true',help='Fill the frame with the station district; exclude diorama edges')
 parser.add_argument('--replay',action='store_true',help='Play saved outputs without generating')
 parser.add_argument('--resolution',choices=['480P','768P'],default='480P')
@@ -71,6 +73,7 @@ def launch_ui():
         area=bpy.context.area
         if area==state['source']:
             lines=['HILLSIDE JUNCTION / GRAY GEOMETRY',f"{stats['modeled_parts']:,} modeled parts / {stats['mesh_faces']:,} faces",'9 parallel H3 Max views / '+args.resolution]
+            if args.anchors:lines.append('STYLE-ANCHORED REGENERATION')
             if len(state['results'])==9:
                 lines.append(f"All visible: {max(r['visible_seconds'] for r in state['results'].values()):.2f}s")
             if state['started']:
@@ -96,9 +99,20 @@ def launch_ui():
         capture=time.perf_counter()-state['started']
         bundle=image_guidance.prepare((out/'geometry.png').read_bytes(),[],'IMAGE')
         workers.clear()
-        for i,(_,style) in enumerate(STYLES):
-            payload=image_guidance.payload(bundle,RULES+style,args.resolution,271828,i)
-            t=threading.Thread(target=live_preview.generate,args=(key,payload,str(out),state['events'],i,capture,live_grid.ENDPOINT),daemon=True)
+        prior=json.loads(args.anchors.read_text()) if args.anchors else None
+        for i,(name,style) in enumerate(STYLES):
+            endpoint=live_grid.ENDPOINT
+            if prior:
+                anchor=out/f'anchor-{i}.jpg'
+                subprocess.run(['ffmpeg','-y','-v','error','-ss','4','-i',prior['styles'][name]['video_path'],'-frames:v','1','-q:v','2',str(anchor)],check=True)
+                data=anchor.read_bytes()
+                prompt=('Locked-off architectural render hold. The first and last images are identical and already fully finished. Preserve that exact image composition, materials, palette, brightness, sharpness and lighting for the entire duration. All buildings, train cars, rails and stairs stay absolutely stationary. No camera motion, object motion, style change, reveal, relighting, fade, dissolve, morph, construction or transition. Only microscopic natural texture shimmer, if any. The entire clip should look like the same finished render. ')
+                payload=live_preview.build_payload(data,prompt,args.resolution,end_image_bytes=data)
+                payload['seed']=314159+i
+                endpoint=live_preview.ENDPOINT
+            else:
+                payload=image_guidance.payload(bundle,RULES+style,args.resolution,271828,i)
+            t=threading.Thread(target=live_preview.generate,args=(key,payload,str(out),state['events'],i,capture,endpoint),daemon=True)
             workers.append(t);t.start()
 
     def tick():

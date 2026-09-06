@@ -9,6 +9,7 @@ from pathlib import Path
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--blender', default='blender')
+    parser.add_argument('--anchors', type=Path, help='Prior railway status JSON for style-anchored regeneration')
     parser.add_argument('--closeup', action='store_true', help='Tight station framing for the railway scene')
     parser.add_argument('--scene', choices=['ship', 'railway'], default='ship')
     parser.add_argument('--env', type=Path, default=Path('.env'))
@@ -27,6 +28,7 @@ def main():
                '--env', str(args.env.resolve()), '--output', str(output)]
     command += ['--generate'] if args.scene == 'railway' else ['--grid', '--start-stage', '5']
     if args.closeup and args.scene == 'railway': command.append('--closeup')
+    if args.anchors and args.scene == 'railway': command += ['--anchors', str(args.anchors.resolve())]
     if args.dry_run:
         print(subprocess.list2cmdline(command))
         return
