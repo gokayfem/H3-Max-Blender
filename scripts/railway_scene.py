@@ -177,6 +177,7 @@ def build(closeup=False):
     camera=bpy.context.object; camera.name='Locked district camera'
     camera.rotation_euler=(Vector((0,2,5))-camera.location).to_track_quat('-Z','Y').to_euler()
     camera.data.type='ORTHO';camera.data.ortho_scale=106;scene.camera=camera
+    camera.data.show_passepartout=True;camera.data.passepartout_alpha=1.0
     if closeup:
         target=Vector((0,-1,4.5))
         camera.location=target+Vector((66,-93,63))
