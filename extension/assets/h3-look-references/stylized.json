@@ -1,0 +1,29 @@
+{
+  "id": "stylized",
+  "label": "STYLIZED",
+  "file": "stylized.jpg",
+  "sha256": "6d8ba03902dd7d3e5ba2478e37f9fb823936cacecf8a5d0622a59da8cc394315",
+  "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Expressive hand-painted gouache material swatch. Deep indigo, burnt copper, warm ivory and dusty turquoise. Visible confident dry-brush strokes, pooled opaque pigment, subtle cold-press paper grain, sharply painted edge accents. Editorial maritime illustration surface character.",
+  "total_seconds": 2.9591576000002533,
+  "result": {
+    "images": [
+      {
+        "url": "https://v3b.fal.media/files/b/0aa949e5/hy3CFLjZQk3SW1XyNGoxK_ZPq2Ud9a.jpg",
+        "content_type": "image/jpeg",
+        "file_name": "hy3CFLjZQk3SW1XyNGoxK_ZPq2Ud9a.jpg",
+        "file_size": null,
+        "width": 1024,
+        "height": 576
+      }
+    ],
+    "timings": {
+      "inference": 0.7902978519996395
+    },
+    "seed": 83417,
+    "has_nsfw_concepts": [
+      false
+    ],
+    "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Expressive hand-painted gouache material swatch. Deep indigo, burnt copper, warm ivory and dusty turquoise. Visible confident dry-brush strokes, pooled opaque pigment, subtle cold-press paper grain, sharply painted edge accents. Editorial maritime illustration surface character.",
+    "actual_prompt": null
+  }
+}

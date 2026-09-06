@@ -1,0 +1,121 @@
+{
+  "model": "fal-ai/krea-2/turbo",
+  "styles": [
+    {
+      "id": "cartoon",
+      "label": "CARTOON",
+      "file": "cartoon.jpg",
+      "sha256": "1c96b78a6317869184e6d74998c7cfda145484335c9defe4736c452923753433",
+      "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Flat cel-animation production color swatch. Saturated petrol blue, warm ivory, coral orange and slate navy. Crisp uniform black ink contours separating flat regions; two-step cel shadow blocks; clean opaque digital gouache fill. Beautiful 2D feature-animation surface treatment.",
+      "total_seconds": 2.740671300000031,
+      "result": {
+        "images": [
+          {
+            "url": "https://v3b.fal.media/files/b/0aa949e5/f40LNIZLwUib0c7v1zHC__gz1jDeKH.jpg",
+            "content_type": "image/jpeg",
+            "file_name": "f40LNIZLwUib0c7v1zHC__gz1jDeKH.jpg",
+            "file_size": null,
+            "width": 1024,
+            "height": 576
+          }
+        ],
+        "timings": {
+          "inference": 0.7830514502711594
+        },
+        "seed": 83417,
+        "has_nsfw_concepts": [
+          false
+        ],
+        "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Flat cel-animation production color swatch. Saturated petrol blue, warm ivory, coral orange and slate navy. Crisp uniform black ink contours separating flat regions; two-step cel shadow blocks; clean opaque digital gouache fill. Beautiful 2D feature-animation surface treatment.",
+        "actual_prompt": null
+      }
+    },
+    {
+      "id": "claymation",
+      "label": "CLAYMATION",
+      "file": "claymation.jpg",
+      "sha256": "639ffb78a8ded64ceb26c5bcba5e8e1446e94c939b96385b00d0408b159493f0",
+      "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. A tactile handmade plasticine material swatch. Terracotta orange, muted seafoam teal, warm cream and slate blue clay. Fingerprint ridges, tiny tool marks, soft matte clay compression lines, hand-smoothed rounded ridges. Diffuse miniature studio lighting, absolutely no glossy plastic.",
+      "total_seconds": 2.816855299999588,
+      "result": {
+        "images": [
+          {
+            "url": "https://v3b.fal.media/files/b/0aa949e5/YsfLEHIELZ8m-1k_bzB1O_FshfFM41.jpg",
+            "content_type": "image/jpeg",
+            "file_name": "YsfLEHIELZ8m-1k_bzB1O_FshfFM41.jpg",
+            "file_size": null,
+            "width": 1024,
+            "height": 576
+          }
+        ],
+        "timings": {
+          "inference": 0.7904208269901574
+        },
+        "seed": 83417,
+        "has_nsfw_concepts": [
+          false
+        ],
+        "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. A tactile handmade plasticine material swatch. Terracotta orange, muted seafoam teal, warm cream and slate blue clay. Fingerprint ridges, tiny tool marks, soft matte clay compression lines, hand-smoothed rounded ridges. Diffuse miniature studio lighting, absolutely no glossy plastic.",
+        "actual_prompt": null
+      }
+    },
+    {
+      "id": "realistic",
+      "label": "REALISTIC",
+      "file": "realistic.jpg",
+      "sha256": "b0b8eff0cb09572b0e133f47a927db62469f62d894e6a18de87181ca54ba5677",
+      "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Photographic macro material swatch: deep navy marine enamel, warm ivory painted steel, brushed stainless steel and dark green-black glass. Fine paint orange peel, subtle salt residue, micro scratches, precise shallow weld beads. Neutral natural daylight with physically realistic roughness and reflection.",
+      "total_seconds": 2.70297379999829,
+      "result": {
+        "images": [
+          {
+            "url": "https://v3b.fal.media/files/b/0aa949ce/zbuuEccWgAIAa1aQ7qFSy_CvU2yj7N.jpg",
+            "content_type": "image/jpeg",
+            "file_name": "zbuuEccWgAIAa1aQ7qFSy_CvU2yj7N.jpg",
+            "file_size": null,
+            "width": 1024,
+            "height": 576
+          }
+        ],
+        "timings": {
+          "inference": 0.78796027880162
+        },
+        "seed": 83417,
+        "has_nsfw_concepts": [
+          false
+        ],
+        "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Photographic macro material swatch: deep navy marine enamel, warm ivory painted steel, brushed stainless steel and dark green-black glass. Fine paint orange peel, subtle salt residue, micro scratches, precise shallow weld beads. Neutral natural daylight with physically realistic roughness and reflection.",
+        "actual_prompt": null
+      }
+    },
+    {
+      "id": "stylized",
+      "label": "STYLIZED",
+      "file": "stylized.jpg",
+      "sha256": "6d8ba03902dd7d3e5ba2478e37f9fb823936cacecf8a5d0622a59da8cc394315",
+      "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Expressive hand-painted gouache material swatch. Deep indigo, burnt copper, warm ivory and dusty turquoise. Visible confident dry-brush strokes, pooled opaque pigment, subtle cold-press paper grain, sharply painted edge accents. Editorial maritime illustration surface character.",
+      "total_seconds": 2.9591576000002533,
+      "result": {
+        "images": [
+          {
+            "url": "https://v3b.fal.media/files/b/0aa949e5/hy3CFLjZQk3SW1XyNGoxK_ZPq2Ud9a.jpg",
+            "content_type": "image/jpeg",
+            "file_name": "hy3CFLjZQk3SW1XyNGoxK_ZPq2Ud9a.jpg",
+            "file_size": null,
+            "width": 1024,
+            "height": 576
+          }
+        ],
+        "timings": {
+          "inference": 0.7902978519996395
+        },
+        "seed": 83417,
+        "has_nsfw_concepts": [
+          false
+        ],
+        "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Expressive hand-painted gouache material swatch. Deep indigo, burnt copper, warm ivory and dusty turquoise. Visible confident dry-brush strokes, pooled opaque pigment, subtle cold-press paper grain, sharply painted edge accents. Editorial maritime illustration surface character.",
+        "actual_prompt": null
+      }
+    }
+  ]
+}

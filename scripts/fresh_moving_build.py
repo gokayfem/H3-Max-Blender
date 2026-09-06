@@ -22,9 +22,14 @@ out=Path(args.output).resolve();out.mkdir(parents=True,exist_ok=True)
 for line in Path(args.env).read_text(encoding='utf-8-sig').splitlines():
     if line.strip().startswith('FAL_KEY='):
         os.environ['FAL_KEY']=line.split('=',1)[1].strip().strip('\"\'');break
-import addon_utils
-addon_utils.enable('bl_ext.user_default.fal_ai',default_set=True)
-from bl_ext.user_default.fal_ai import live_preview, live_grid, stage_prompts
+import importlib.util
+extension_root = Path(__file__).resolve().parents[1] / 'extension'
+spec = importlib.util.spec_from_file_location('fal_ai', extension_root / '__init__.py', submodule_search_locations=[str(extension_root)])
+addon = importlib.util.module_from_spec(spec)
+sys.modules['fal_ai'] = addon
+spec.loader.exec_module(addon)
+addon.register()
+from fal_ai import live_preview, live_grid, stage_prompts
 # Present moving late sections; retain full raw model outputs beside previews.
 import subprocess
 _original_generate=live_preview.generate

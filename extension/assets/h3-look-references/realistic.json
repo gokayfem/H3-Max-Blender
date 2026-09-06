@@ -1,0 +1,29 @@
+{
+  "id": "realistic",
+  "label": "REALISTIC",
+  "file": "realistic.jpg",
+  "sha256": "b0b8eff0cb09572b0e133f47a927db62469f62d894e6a18de87181ca54ba5677",
+  "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Photographic macro material swatch: deep navy marine enamel, warm ivory painted steel, brushed stainless steel and dark green-black glass. Fine paint orange peel, subtle salt residue, micro scratches, precise shallow weld beads. Neutral natural daylight with physically realistic roughness and reflection.",
+  "total_seconds": 2.70297379999829,
+  "result": {
+    "images": [
+      {
+        "url": "https://v3b.fal.media/files/b/0aa949ce/zbuuEccWgAIAa1aQ7qFSy_CvU2yj7N.jpg",
+        "content_type": "image/jpeg",
+        "file_name": "zbuuEccWgAIAa1aQ7qFSy_CvU2yj7N.jpg",
+        "file_size": null,
+        "width": 1024,
+        "height": 576
+      }
+    ],
+    "timings": {
+      "inference": 0.78796027880162
+    },
+    "seed": 83417,
+    "has_nsfw_concepts": [
+      false
+    ],
+    "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. Photographic macro material swatch: deep navy marine enamel, warm ivory painted steel, brushed stainless steel and dark green-black glass. Fine paint orange peel, subtle salt residue, micro scratches, precise shallow weld beads. Neutral natural daylight with physically realistic roughness and reflection.",
+    "actual_prompt": null
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "model": "fal-ai/krea-2/turbo",
+  "verified_schema": "2026-09-06",
+  "schema_url": "https://fal.ai/models/fal-ai/krea-2/turbo/llms.txt",
+  "purpose": "Object-free fixed style references; geometry comes from the current viewport",
+  "styles": [
+    {
+      "id": "expedition",
+      "label": "EXPEDITION / REAL",
+      "file": "expedition.jpg",
+      "sha256": "f9343beeb21c09280fd8736b6b94527224d8d3c28c5f8e417e510f6c49d45cd9",
+      "seed": 91040,
+      "prompt": "A full-frame completely nonrepresentational color, light and material field. One continuous edge-to-edge abstract texture at an unrecognizable scale, without any subject or discrete silhouette. Pure aesthetic reference: palette, lighting quality, surface roughness and photographic response only. No identifiable objects, vehicles, people, structures, scenery, horizon, products, spheres, cubes, panels, swatch grids, text, symbols, labels, borders or frames. Deep navy blue and ocean teal blending into warm ivory highlights. Natural broad daylight, soft silvery specular reflections, smooth satin enamel-like response, subtle liquid microtexture. Restrained realistic photographic color, generous calm areas, continuous gently curved tonal transitions. ",
+      "source_url": "https://v3b.fal.media/files/b/0aa94850/MULdlZSIZ5YQJwgY-0fNA_DkFGgVdP.jpg",
+      "seconds": 2.773721600000499,
+      "provider_timings": {
+        "inference": 0.8044983699801378
+      }
+    },
+    {
+      "id": "storm",
+      "label": "NORTH SEA / STORM",
+      "file": "storm.jpg",
+      "sha256": "ac1ad1036872cdabf815b705e0b86e13380737fb849f2fbe7705527b282758f7",
+      "seed": 91041,
+      "prompt": "A full-frame completely nonrepresentational color, light and material field. One continuous edge-to-edge abstract texture at an unrecognizable scale, without any subject or discrete silhouette. Pure aesthetic reference: palette, lighting quality, surface roughness and photographic response only. No identifiable objects, vehicles, people, structures, scenery, horizon, products, spheres, cubes, panels, swatch grids, text, symbols, labels, borders or frames. Cold charcoal, slate gray and desaturated deep blue. Diffuse silver light blooms across dark wet-looking microtexture, subtle diagonal mist-like grain and smooth atmospheric gradients. Cinematic low-key exposure, soft highlights and rich readable shadows. An abstract moody cool material field. ",
+      "source_url": "https://v3b.fal.media/files/b/0aa94868/wMjDFruDJgbNjr-Ex9TNT_XcJj8KAg.jpg",
+      "seconds": 2.7494065000000774,
+      "provider_timings": {
+        "inference": 0.7902285871095955
+      }
+    },
+    {
+      "id": "orbital",
+      "label": "ORBITAL / SCI-FI",
+      "file": "orbital.jpg",
+      "sha256": "5094b9e7e9ef3acdf8e24a37a350527d1ecaf8ff4fa0a026e783320ad4449b72",
+      "seed": 91042,
+      "prompt": "A full-frame completely nonrepresentational color, light and material field. One continuous edge-to-edge abstract texture at an unrecognizable scale, without any subject or discrete silhouette. Pure aesthetic reference: palette, lighting quality, surface roughness and photographic response only. No identifiable objects, vehicles, people, structures, scenery, horizon, products, spheres, cubes, panels, swatch grids, text, symbols, labels, borders or frames. Luminous pearl white, pale lavender, deep indigo and restrained electric cyan. Smooth ceramic-like sheen, soft metallic iridescence, flowing cyan reflections through continuous violet gradients. Futuristic cinematic light with elegant negative space, gentle glossy curvature, no hard polygon boundaries. ",
+      "source_url": "https://v3b.fal.media/files/b/0aa94850/PbFk6Hz5eWwdHaN3w44yi_Oa3G4ITC.jpg",
+      "seconds": 3.127311600000212,
+      "provider_timings": {
+        "inference": 0.8457989510061452
+      }
+    },
+    {
+      "id": "miniature",
+      "label": "WORKSHOP / MINIATURE",
+      "file": "miniature.jpg",
+      "sha256": "e2600412d2912318161baadd96e75c5cf8c67b8a5e76e91a0726511994f03a55",
+      "seed": 91043,
+      "prompt": "A full-frame completely nonrepresentational color, light and material field. One continuous edge-to-edge abstract texture at an unrecognizable scale, without any subject or discrete silhouette. Pure aesthetic reference: palette, lighting quality, surface roughness and photographic response only. No identifiable objects, vehicles, people, structures, scenery, horizon, products, spheres, cubes, panels, swatch grids, text, symbols, labels, borders or frames. Warm cream, soft ochre, muted navy and desaturated teal. Fine hand-painted matte pigment grain, very subtle tactile surface variation, warm diffuse softbox-like light and shallow-focus creamy transitions. A quiet handcrafted photographic material field, softly imperfect and intimate. ",
+      "source_url": "https://v3b.fal.media/files/b/0aa94850/IbDwgrvYurN65o91rHOVP_A1ZtbvfM.jpg",
+      "seconds": 3.3289936000001035,
+      "provider_timings": {
+        "inference": 0.8669916889998603
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "claymation",
+  "label": "CLAYMATION",
+  "file": "claymation.jpg",
+  "sha256": "639ffb78a8ded64ceb26c5bcba5e8e1446e94c939b96385b00d0408b159493f0",
+  "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. A tactile handmade plasticine material swatch. Terracotta orange, muted seafoam teal, warm cream and slate blue clay. Fingerprint ridges, tiny tool marks, soft matte clay compression lines, hand-smoothed rounded ridges. Diffuse miniature studio lighting, absolutely no glossy plastic.",
+  "total_seconds": 2.816855299999588,
+  "result": {
+    "images": [
+      {
+        "url": "https://v3b.fal.media/files/b/0aa949e5/YsfLEHIELZ8m-1k_bzB1O_FshfFM41.jpg",
+        "content_type": "image/jpeg",
+        "file_name": "YsfLEHIELZ8m-1k_bzB1O_FshfFM41.jpg",
+        "file_size": null,
+        "width": 1024,
+        "height": 576
+      }
+    ],
+    "timings": {
+      "inference": 0.7904208269901574
+    },
+    "seed": 83417,
+    "has_nsfw_concepts": [
+      false
+    ],
+    "prompt": "A flat edge-to-edge abstract material and color study, landscape 16:9. Only nonrepresentational patches, strokes and material surface samples. No objects, no ship, no boat, no water, no sea, no sky, no horizon, no landscape, no architecture, no people, no scene, no typography, no letters, no labels. A tactile handmade plasticine material swatch. Terracotta orange, muted seafoam teal, warm cream and slate blue clay. Fingerprint ridges, tiny tool marks, soft matte clay compression lines, hand-smoothed rounded ridges. Diffuse miniature studio lighting, absolutely no glossy plastic.",
+    "actual_prompt": null
+  }
+}
