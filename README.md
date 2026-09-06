@@ -30,3 +30,13 @@ This opens a fresh Blender scene and builds the ship automatically. A full run m
 Experimental: previews update asynchronously and generated details can vary. The recording skips the first wait and loops 1.8-second moving excerpts of five-second outputs.
 
 Demo scripts by GPT-6 Astra; video generation by H3 Max. Extension source included, based on [fal-ai/fal-blender-extension](https://github.com/fal-ai/fal-blender-extension). GPL-3.0-or-later.
+
+## Nine-style railway district
+
+A dense hillside station district: **25,251 modeled parts**, **156,974 mesh faces**, neutral gray geometry, and nine simultaneous H3 Max styles in a 3x3 Blender grid.
+
+```sh
+python scripts/run_demo.py --scene railway --blender "C:/Program Files/Blender Foundation/Blender 5.1/blender.exe" --output outputs/railway-01 --generate
+```
+
+One batch makes **nine paid 480p requests**. Each pane shows API and request-to-visible time; full five-second clips play without trimming. Source geometry and measurements are saved in the output folder. Edit the scene and create `refresh.flag` in that folder to request another batch. H3 interprets a captured image, so mesh complexity is not equivalent to neural inference cost.

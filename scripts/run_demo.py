@@ -9,9 +9,10 @@ from pathlib import Path
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--blender', default='blender')
+    parser.add_argument('--scene', choices=['ship', 'railway'], default='ship')
     parser.add_argument('--env', type=Path, default=Path('.env'))
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--generate', action='store_true', help='Enable the 32 paid model requests')
+    parser.add_argument('--generate', action='store_true', help='Enable paid generation: ship 32 requests, railway 9 requests')
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
     if not args.generate and not args.dry_run:
@@ -20,9 +21,10 @@ def main():
     if not executable:
         parser.error('Blender executable not found; pass --blender with its full path.')
     output = args.output.resolve()
-    script = Path(__file__).with_name('fresh_moving_build.py')
+    script = Path(__file__).with_name('railway_demo.py' if args.scene == 'railway' else 'fresh_moving_build.py')
     command = [executable, '--factory-startup', '--online-mode', '--python', str(script), '--',
-               '--env', str(args.env.resolve()), '--output', str(output), '--grid', '--start-stage', '5']
+               '--env', str(args.env.resolve()), '--output', str(output)]
+    command += ['--generate'] if args.scene == 'railway' else ['--grid', '--start-stage', '5']
     if args.dry_run:
         print(subprocess.list2cmdline(command))
         return
