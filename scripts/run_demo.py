@@ -12,10 +12,10 @@ def main():
     parser.add_argument('--train-motion', action='store_true', help='Animate the existing trains in the anchored railway scene')
     parser.add_argument('--anchors', type=Path, help='Prior railway status JSON for style-anchored regeneration')
     parser.add_argument('--closeup', action='store_true', help='Tight station framing for the railway scene')
-    parser.add_argument('--scene', choices=['ship', 'railway'], default='ship')
+    parser.add_argument('--scene', choices=['ship', 'railway', 'market'], default='ship')
     parser.add_argument('--env', type=Path, default=Path('.env'))
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--generate', action='store_true', help='Enable paid generation: ship 32 requests, railway 9 requests')
+    parser.add_argument('--generate', action='store_true', help='Enable paid generation: ship 32 requests, railway 9 requests, market 16 requests')
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
     if not args.generate and not args.dry_run:
@@ -24,10 +24,11 @@ def main():
     if not executable:
         parser.error('Blender executable not found; pass --blender with its full path.')
     output = args.output.resolve()
-    script = Path(__file__).with_name('railway_demo.py' if args.scene == 'railway' else 'fresh_moving_build.py')
+    script = Path(__file__).with_name({'ship':'fresh_moving_build.py','railway':'railway_demo.py','market':'market_demo.py'}[args.scene])
     command = [executable, '--factory-startup', '--online-mode', '--python', str(script), '--',
                '--env', str(args.env.resolve()), '--output', str(output)]
-    command += ['--generate'] if args.scene == 'railway' else ['--grid', '--start-stage', '5']
+    command += ['--generate'] if args.scene in ['railway','market'] else ['--grid', '--start-stage', '5']
+    if args.scene == 'market': command += ['--resolution', '768P']
     if args.closeup and args.scene == 'railway': command.append('--closeup')
     if args.anchors and args.scene == 'railway': command += ['--anchors', str(args.anchors.resolve())]
     if args.train_motion and args.scene == 'railway': command.append('--train-motion')
